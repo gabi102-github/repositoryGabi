@@ -1,4 +1,11 @@
 version: "2"
+services:
+  server:
+    build: ./server
+    links:
+      - db
+    ports:
+      - "5000:5000"
   db:
     image: mysql:5.7
     ports:
@@ -7,4 +14,3 @@ version: "2"
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - ./db:/docker-entrypoint-initdb.d/:ro
-
