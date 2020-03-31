@@ -14,3 +14,11 @@ services:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - ./db:/docker-entrypoint-initdb.d/:ro
+  admin:
+    build: ./admin
+    links:
+      - db
+    ports:
+      - "5010:5010"
+    tty: true
+    stdin_open: true
