@@ -1,16 +1,9 @@
-CREATE DATABASE flightsDatabase;
-use flightsDatabase;
+CREATE DATABASE smartphonesDatabase;
+use smartphonesDatabase;
 
-CREATE TABLE flights (
-  source VARCHAR(20),
-  dest VARCHAR(20),
-  departureDay INT,
-  departureHour INT,
-  duration INT,
-  numberOfSeats INT,
-  flightId INT,
-  books INT,
-  boughtTickets INT
+CREATE TABLE smartphones (
+  smartphone_name VARCHAR(20),
+  smartphone_id INT
 );
 
 
