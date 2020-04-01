@@ -36,7 +36,7 @@ def main():
 		if command == "remove":
 			args = input("\nRemove arguments: smartphone Id\n")
 			argsL = args.split()
-s
+
 if __name__ == '__main__':
 
 	main()
