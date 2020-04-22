@@ -23,11 +23,19 @@ def add_smartphone(smartphone_name, smartphone_id):
 	cursor.close()
 	connection.close()
 
+def show_products():
+
+    global cursor
+
+    cursor.execute("SELECT * FROM Products")
+    result = cursor.fetchall()
+    print(tabulate(result, headers=["Name", "Id", "Brand", "Price", "Stock"], tablefmt='psql'))
+
 def main():
 
 	while(True):
 
-		command = input("Enter command: add or remove\n")
+		command = input("Enter command: add, remove, show\n")
 
 		if command == "add":
 			args = input("\nInsert arguments: smartphone Id, smartphone Name\n")
@@ -36,6 +44,9 @@ def main():
 		if command == "remove":
 			args = input("\nRemove arguments: smartphone Id\n")
 			argsL = args.split()
+
+		if command == "show":
+			show_products()
 
 if __name__ == '__main__':
 
